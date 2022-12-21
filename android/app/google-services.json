@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "189901509537",
+    "project_id": "expensesxd-manager",
+    "storage_bucket": "expensesxd-manager.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:189901509537:android:ba459682c174abb0a071e0",
+        "android_client_info": {
+          "package_name": "com.example.myexpenses"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "189901509537-f1gfvr1j996m6e9vr2csuhfkaelgkhhi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFVQU3LkFNqEi7toP6FL9sXUUHd3pYikU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "189901509537-f1gfvr1j996m6e9vr2csuhfkaelgkhhi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
