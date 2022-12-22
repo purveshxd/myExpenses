@@ -3,11 +3,10 @@ import 'package:hive_flutter/hive_flutter.dart';
 
 import 'package:firebase_core/firebase_core.dart';
 import 'package:myexpenses/firebase_options.dart';
-import 'package:myexpenses/screens/auth_page.dart';
-import 'package:myexpenses/screens/login_page.dart';
+import 'package:myexpenses/screens/authScreens/auth_page.dart';
+import 'package:myexpenses/screens/authScreens/login_page.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
   WidgetsFlutterBinding.ensureInitialized();
 
   await Hive.initFlutter();
@@ -15,7 +14,7 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
   await Hive.initFlutter();
-  var box = await Hive.openBox('taskBox');
+  await Hive.openBox('taskBox');
   runApp(const MyApp());
 }
 

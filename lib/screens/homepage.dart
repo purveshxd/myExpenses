@@ -229,6 +229,13 @@ class _HomepageState extends State<Homepage> {
     debugPrint(database.expensesList.toString());
   }
 
+  void deleteTransaction(index) {
+    setState(() {
+      database.expensesList.removeAt(index);
+    });
+    database.updateDate();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -237,6 +244,7 @@ class _HomepageState extends State<Homepage> {
       appBar: customAppBar(context),
       body: SingleChildScrollView(
         child: BodyWidget(
+          onSlide: (p0) => deleteTransaction(p0),
           expensesList: database.expensesList,
           totalExpense: totalExpenses(),
           totalIncome: totalIncome(),

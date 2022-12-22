@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:myexpenses/screens/homepage.dart';
-import 'package:myexpenses/screens/login_page.dart';
+import 'package:myexpenses/screens/authScreens/login_or_registration.dart';
+import 'package:myexpenses/screens/authScreens/login_page.dart';
 
 class AuthPage extends StatelessWidget {
   const AuthPage({super.key});
@@ -19,7 +20,7 @@ class AuthPage extends StatelessWidget {
             return const Homepage();
           } else {
             // if user is not logged in
-            return LoginPage();
+            return const LoginOrRegister();
           }
         },
       ),

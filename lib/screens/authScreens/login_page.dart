@@ -1,12 +1,13 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:myexpenses/constants/constants.dart';
-import 'package:myexpenses/screens/registration_page.dart';
+import 'package:myexpenses/screens/authScreens/registration_page.dart';
 import 'package:myexpenses/widgets/input_text_field.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class LoginPage extends StatefulWidget {
-  LoginPage({super.key});
+  const LoginPage({super.key, this.onTap});
+  final Function()? onTap;
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -38,6 +39,8 @@ class _LoginPageState extends State<LoginPage> {
         customAlert('Incorrect Email');
       } else if (e.code == 'wrong-password') {
         customAlert('Incorrect Password');
+      } else {
+        customAlert(e.message.toString());
       }
     }
   }
@@ -63,10 +66,10 @@ class _LoginPageState extends State<LoginPage> {
           children: [
             Container(
               height: MediaQuery.of(context).size.height / 4,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 image: DecorationImage(
                   fit: BoxFit.cover,
-                  image: AssetImage(Constants().loginBanner),
+                  image: AssetImage(Constants.loginBanner),
                 ),
               ),
             ),
@@ -121,67 +124,66 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ),
             const SizedBox(
-              height: 20,
+              height: 30,
             ),
-            Row(
-              children: [
-                Expanded(
-                  child: Divider(
-                    endIndent: 5,
-                    thickness: 0.3,
-                    color: Colors.grey.shade600,
+            Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Divider(
+                      endIndent: 5,
+                      thickness: 0.3,
+                      color: Colors.grey.shade600,
+                    ),
                   ),
-                ),
-                const Text("Or Sign-in with"),
-                Expanded(
-                  child: Divider(
-                    indent: 5,
-                    thickness: 0.3,
-                    color: Colors.grey.shade600,
+                  const Text("Or Sign-in with"),
+                  Expanded(
+                    child: Divider(
+                      indent: 5,
+                      thickness: 0.3,
+                      color: Colors.grey.shade600,
+                    ),
                   ),
-                ),
-              ],
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            IconButton(
-              iconSize: 40,
-              color: Colors.red,
-              padding: const EdgeInsets.all(0),
-              onPressed: () {},
-              icon: Image.asset(
-                Constants().googleLogo,
+                ],
               ),
             ),
-            const SizedBox(
-              height: 20,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  "Not a member? ",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      color: Colors.grey.shade600,
-                      fontWeight: FontWeight.normal),
+            Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: IconButton(
+                iconSize: 40,
+                color: Colors.red,
+                padding: const EdgeInsets.all(0),
+                onPressed: () {},
+                icon: Image.asset(
+                  Constants.googleLogo,
                 ),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.of(context).pushReplacement(MaterialPageRoute(
-                      builder: (context) => RegistrationPage(),
-                    ));
-                  },
-                  child: Text(
-                    "Register Now",
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "Not a member? ",
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                        color: Colors.blue.shade600,
-                        fontWeight: FontWeight.bold),
+                        color: Colors.grey.shade600,
+                        fontWeight: FontWeight.normal),
                   ),
-                ),
-              ],
+                  GestureDetector(
+                    onTap: widget.onTap,
+                    child: Text(
+                      "Register Now",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                          color: Colors.blue.shade600,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ],
         ),
