@@ -1,6 +1,7 @@
+
+
 import 'package:flutter/material.dart';
 import 'package:myexpenses/widgets/in_out_expense.dart';
-
 
 class CustomListTile extends StatelessWidget {
   const CustomListTile({
@@ -17,12 +18,13 @@ class CustomListTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var height = MediaQuery.of(context).size.height;
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15),
         color: Colors.grey.shade100,
       ),
-      height: 70,
+      height: height / 10,
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Row(
@@ -38,9 +40,12 @@ class CustomListTile extends StatelessWidget {
                     expenseTitle,
                     style: const TextStyle(fontWeight: FontWeight.bold),
                   ),
+                  const SizedBox(
+                    height: 3,
+                  ),
                   Text(
                     expenseDate,
-                    style: TextStyle(fontSize: 14, color: Colors.grey.shade500),
+                    style: TextStyle(fontSize: 12, color: Colors.grey.shade500),
                   ),
                 ],
               ),

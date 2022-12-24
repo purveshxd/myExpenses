@@ -4,12 +4,10 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:myexpenses/firebase_options.dart';
 import 'package:myexpenses/screens/authScreens/auth_page.dart';
-import 'package:myexpenses/screens/authScreens/login_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  await Hive.initFlutter();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
@@ -25,7 +23,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'myExpenses',
       theme: ThemeData(primarySwatch: Colors.amber),
       home: const AuthPage(),
     );

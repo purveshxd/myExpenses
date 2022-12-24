@@ -43,6 +43,8 @@ dependencies:
   firebase_auth: ^4.2.0
   flutter_slidable: ^2.0.0
   url_launcher: ^6.1.7
+  google_sign_in: ^5.4.2
+
 
 
 dev_dependencies:
@@ -50,6 +52,22 @@ dev_dependencies:
     sdk: flutter
   hive_generator: ^2.0.0
   build_runner: ^2.3.3
+  flutter_launcher_icons: ^0.11.0
+
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/icons/money-mouth-face.png"
+  web:
+    generate: true
+    image_path: "assets/icons/money-mouth-face.png"
+  windows:
+    generate: true
+    image_path: "assets/icons/money-mouth-face.png"
+  macos:
+    generate: true
+    image_path: "assets/icons/money-mouth-face.png"
+
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -72,7 +90,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/
-  #   - images/a_dot_ham.jpeg
+    - assets/icons/money-mouth-face.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

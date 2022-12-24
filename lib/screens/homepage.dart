@@ -63,12 +63,14 @@ class _HomepageState extends State<Homepage> {
                     ),
                     // TextField to exter expense title
                     InputTextField(
+                        obscureText: false,
                         hintText: "Enter Title",
                         textController: expenseTitle,
                         textInputType: TextInputType.text),
                     const SizedBox(height: 15),
                     // TextField to enter expense amount
                     InputTextField(
+                        obscureText: false,
                         hintText: "Enter Amount",
                         textController: expenseAmt,
                         textInputType: TextInputType.number),
@@ -203,9 +205,7 @@ class _HomepageState extends State<Homepage> {
       showDialog(
           context: context,
           builder: (context) {
-            return const Dialog(
-              child: Text("Expense can't be empty"),
-            );
+            return const Text("Expense can't be empty");
           });
     } else {
       setState(() {
@@ -226,7 +226,7 @@ class _HomepageState extends State<Homepage> {
     database.updateDate();
     expenseTitle.clear();
     expenseAmt.clear();
-    debugPrint(database.expensesList.toString());
+    // debugPrint(database.expensesList.toString());
   }
 
   void deleteTransaction(index) {
@@ -242,12 +242,16 @@ class _HomepageState extends State<Homepage> {
       resizeToAvoidBottomInset: true,
       backgroundColor: Colors.grey.shade300,
       appBar: customAppBar(context),
-      body: SingleChildScrollView(
-        child: BodyWidget(
-          onSlide: (p0) => deleteTransaction(p0),
-          expensesList: database.expensesList,
-          totalExpense: totalExpenses(),
-          totalIncome: totalIncome(),
+      body: SafeArea(
+        maintainBottomViewPadding: true,
+        child: SingleChildScrollView(
+          physics: const NeverScrollableScrollPhysics(),
+          child: BodyWidget(
+            onSlide: (p0) => deleteTransaction(p0),
+            expensesList: database.expensesList,
+            totalExpense: totalExpenses(),
+            totalIncome: totalIncome(),
+          ),
         ),
       ),
       floatingActionButton: FloatingActionButton(

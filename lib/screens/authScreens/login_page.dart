@@ -1,7 +1,5 @@
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:myexpenses/constants/constants.dart';
-import 'package:myexpenses/screens/authScreens/registration_page.dart';
 import 'package:myexpenses/widgets/input_text_field.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -39,8 +37,10 @@ class _LoginPageState extends State<LoginPage> {
         customAlert('Incorrect Email');
       } else if (e.code == 'wrong-password') {
         customAlert('Incorrect Password');
-      } else {
-        customAlert(e.message.toString());
+      } else if (e.message == 'Given String is empty or null') {
+        debugPrint(e.code);
+        debugPrint(e.message);
+        customAlert("Email or Password can't be empty");
       }
     }
   }
@@ -56,6 +56,10 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
+  // void googleSignIn() {
+  //   AuthService().signInWithGoogle();
+  // }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -65,7 +69,7 @@ class _LoginPageState extends State<LoginPage> {
           padding: const EdgeInsets.all(15),
           children: [
             Container(
-              height: MediaQuery.of(context).size.height / 4,
+              height: MediaQuery.of(context).size.height / 3,
               decoration: const BoxDecoration(
                 image: DecorationImage(
                   fit: BoxFit.cover,
@@ -90,12 +94,19 @@ class _LoginPageState extends State<LoginPage> {
             const SizedBox(
               height: 15,
             ),
-            InputTextField(hintText: "Email", textController: emailController),
+            InputTextField(
+                obscureText: false,
+                hintText: "Email",
+                textController: emailController,
+                textInputType: TextInputType.emailAddress),
             const SizedBox(
               height: 15,
             ),
             InputTextField(
-                hintText: "Password", textController: passController),
+                obscureText: true,
+                hintText: "Password",
+                textController: passController,
+                textInputType: TextInputType.visiblePassword),
             const SizedBox(
               height: 5,
             ),
@@ -123,43 +134,45 @@ class _LoginPageState extends State<LoginPage> {
                 style: TextStyle(fontSize: 18),
               ),
             ),
-            const SizedBox(
-              height: 30,
-            ),
-            Padding(
-              padding: const EdgeInsets.all(15.0),
-              child: Row(
-                children: [
-                  Expanded(
-                    child: Divider(
-                      endIndent: 5,
-                      thickness: 0.3,
-                      color: Colors.grey.shade600,
-                    ),
-                  ),
-                  const Text("Or Sign-in with"),
-                  Expanded(
-                    child: Divider(
-                      indent: 5,
-                      thickness: 0.3,
-                      color: Colors.grey.shade600,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(15.0),
-              child: IconButton(
-                iconSize: 40,
-                color: Colors.red,
-                padding: const EdgeInsets.all(0),
-                onPressed: () {},
-                icon: Image.asset(
-                  Constants.googleLogo,
-                ),
-              ),
-            ),
+
+            // const SizedBox(
+            //   height: 30,
+            // ),
+            // Padding(
+            //   padding: const EdgeInsets.all(15.0),
+            //   child: Row(
+            //     children: [
+            //       Expanded(
+            //         child: Divider(
+            //           endIndent: 5,
+            //           thickness: 0.3,
+            //           color: Colors.grey.shade600,
+            //         ),
+            //       ),
+            //       const Text("Or Sign-in with"),
+            //       Expanded(
+            //         child: Divider(
+            //           indent: 5,
+            //           thickness: 0.3,
+            //           color: Colors.grey.shade600,
+            //         ),
+            //       ),
+            //     ],
+            //   ),
+            // ),
+            // Padding(
+            //   padding: const EdgeInsets.all(15.0),
+            //   child: IconButton(
+            //     iconSize: 40,
+            //     color: Colors.red,
+            //     padding: const EdgeInsets.all(0),
+            //     onPressed: () => AuthService().signInWithGoogle(),
+            //     icon: Image.asset(
+            //       Constants.googleLogo,
+            //     ),
+            //   ),
+            // ),
+
             Padding(
               padding: const EdgeInsets.all(15.0),
               child: Row(

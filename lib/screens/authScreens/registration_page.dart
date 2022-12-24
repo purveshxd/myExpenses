@@ -44,7 +44,10 @@ class _RegistrationPageState extends State<RegistrationPage> {
       }
     } on FirebaseAuthException catch (e) {
       Navigator.pop(context);
-      customAlert(e.message);
+      debugPrint(e.message);
+      if (e.message == 'Given String is empty or null') {
+        customAlert("Fields can't be empty");
+      }
     }
   }
 
@@ -70,10 +73,10 @@ class _RegistrationPageState extends State<RegistrationPage> {
             child: Column(
               children: [
                 Container(
-                  height: MediaQuery.of(context).size.height / 5,
+                  height: MediaQuery.of(context).size.height / 6,
                   decoration: const BoxDecoration(
                     image: DecorationImage(
-                      fit: BoxFit.fitHeight,
+                      fit: BoxFit.contain,
                       image: AssetImage(Constants.loginBanner),
                     ),
                   ),
@@ -95,26 +98,38 @@ class _RegistrationPageState extends State<RegistrationPage> {
                       color: Colors.grey.shade600),
                 ),
                 const SizedBox(
-                  height: 15,
+                  height: 10,
                 ),
                 InputTextField(
-                    hintText: "Username", textController: userNameController),
+                    obscureText: false,
+                    hintText: "Username",
+                    textController: userNameController,
+                    textInputType: TextInputType.name),
                 const SizedBox(
-                  height: 15,
+                  height: 10,
                 ),
                 InputTextField(
-                    hintText: "Email", textController: emailController),
+                    obscureText: false,
+                    hintText: "Email",
+                    textController: emailController,
+                    textInputType: TextInputType.emailAddress),
                 const SizedBox(
-                  height: 15,
+                  height: 10,
                 ),
                 InputTextField(
-                    hintText: "Password", textController: passController),
+                    obscureText: true,
+                    hintText: "Password",
+                    textController: passController,
+                    textInputType: TextInputType.visiblePassword),
                 const SizedBox(
-                  height: 15,
+                  height: 10,
                 ),
                 InputTextField(
-                    hintText: "Confirm Password",
-                    textController: confirmpassController),
+                  obscureText: true,
+                  hintText: "Confirm Password",
+                  textController: confirmpassController,
+                  textInputType: TextInputType.visiblePassword,
+                ),
                 const SizedBox(
                   height: 15,
                 ),
@@ -132,39 +147,39 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   ),
                 ),
                 const SizedBox(
-                  height: 20,
+                  height: 15,
                 ),
-                Row(
-                  children: [
-                    Expanded(
-                      child: Divider(
-                        endIndent: 5,
-                        thickness: 0.5,
-                        color: Colors.grey.shade600,
-                      ),
-                    ),
-                    const Text("or continue with"),
-                    Expanded(
-                      child: Divider(
-                        indent: 5,
-                        thickness: 0.5,
-                        color: Colors.grey.shade600,
-                      ),
-                    ),
-                  ],
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                IconButton(
-                  // iconSize: ,
-                  color: Colors.red,
-                  padding: const EdgeInsets.all(0),
-                  onPressed: () {},
-                  icon: Image.asset(
-                    Constants.googleLogo,
-                  ),
-                ),
+                // Row(
+                //   children: [
+                //     Expanded(
+                //       child: Divider(
+                //         endIndent: 5,
+                //         thickness: 0.5,
+                //         color: Colors.grey.shade600,
+                //       ),
+                //     ),
+                //     const Text("or continue with"),
+                //     Expanded(
+                //       child: Divider(
+                //         indent: 5,
+                //         thickness: 0.5,
+                //         color: Colors.grey.shade600,
+                //       ),
+                //     ),
+                //   ],
+                // ),
+                // const SizedBox(
+                //   height: 20,
+                // ),
+                // IconButton(
+                //   // iconSize: ,
+                //   color: Colors.red,
+                //   padding: const EdgeInsets.all(0),
+                //   onPressed: () {},
+                //   icon: Image.asset(
+                //     Constants.googleLogo,
+                //   ),
+                // ),
                 const SizedBox(
                   height: 15,
                 ),
