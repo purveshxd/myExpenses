@@ -2,6 +2,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:myexpenses/constants/constants.dart';
+import 'package:myexpenses/firebaseDatabase/firebaseDatabase.dart';
 import 'package:myexpenses/widgets/input_text_field.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -33,7 +34,9 @@ class _RegistrationPageState extends State<RegistrationPage> {
               email: emailController.text, password: passController.text);
           await resp.user!
               .updateDisplayName(userNameController.text)
-              .whenComplete(() => Navigator.pop(context));
+              .whenComplete(() {
+            Navigator.pop(context);
+          }).whenComplete(() => FirebaseDatabse().setDefaultTransaction());
         } else {
           Navigator.pop(context);
           customAlert('Enter username');

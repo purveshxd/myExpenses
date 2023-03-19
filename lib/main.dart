@@ -24,7 +24,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'myExpenses',
-      theme: ThemeData(primarySwatch: Colors.amber),
+      // themeMode: ThemeMode.system,
+      theme: ThemeData(primarySwatch: Colors.amber, useMaterial3: true),
       home: const AuthPage(),
     );
   }
