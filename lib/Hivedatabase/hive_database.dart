@@ -39,4 +39,8 @@ class HiveDatebase {
   void updateDate() {
     mybox.put('EXP', expensesList);
   }
+
+  void deleteDatabase() {
+    mybox.delete('EXP');
+  }
 }

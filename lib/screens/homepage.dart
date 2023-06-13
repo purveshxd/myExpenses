@@ -3,6 +3,7 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:intl/intl.dart';
 import 'package:myexpenses/Hivedatabase/hive_database.dart';
 import 'package:myexpenses/components/app_bar.dart';
+import 'package:myexpenses/firebaseDatabase/firebaseDatabase.dart';
 import 'package:myexpenses/widgets/in_out_expense.dart';
 import 'package:myexpenses/widgets/input_text_field.dart';
 
@@ -21,6 +22,9 @@ class _HomepageState extends State<Homepage> {
   final _mybox = Hive.box('taskBox');
   @override
   void initState() {
+    // for firebase
+
+    // for hive
     if (_mybox.get('EXP') == null) {
       database.initialData();
     } else {
@@ -236,12 +240,18 @@ class _HomepageState extends State<Homepage> {
     database.updateDate();
   }
 
+  void deleteAllTransaction() {
+    database.deleteDatabase();
+  }
+  // Firebase Database Functions
+  // final FirebaseDatabse firebaseDatabaseinstance = FirebaseDatabse();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: true,
       backgroundColor: Colors.grey.shade300,
-      appBar: customAppBar(context),
+      appBar: customAppBar(context, deleteAllTransaction),
       body: SafeArea(
         maintainBottomViewPadding: true,
         child: SingleChildScrollView(

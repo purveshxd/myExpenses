@@ -36,7 +36,8 @@ class _RegistrationPageState extends State<RegistrationPage> {
               .updateDisplayName(userNameController.text)
               .whenComplete(() {
             Navigator.pop(context);
-          }).whenComplete(() => FirebaseDatabse().setDefaultTransaction());
+          });
+          // .whenComplete(() => FirebaseDatabse().setDefaultTransaction());
         } else {
           Navigator.pop(context);
           customAlert('Enter username');
