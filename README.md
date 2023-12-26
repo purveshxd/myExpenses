@@ -1,4 +1,4 @@
-![myExpenses]([media\myExpense-banner.png](https://github.com/purveshxd/myExpenses/blob/main/media/myExpense-banner.png) "myExpenses")
+![myExpenses](https://github.com/purveshxd/myExpenses/blob/main/media/myExpense-banner.png "myExpenses")
 
 # myExpense
 
