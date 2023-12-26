@@ -1,16 +1,15 @@
-# myexpenses
+![myExpenses](https://github.com/purveshxd/myExpenses/blob/main/assets/icons/money-mouth-face.png "myExpenses")
 
-A new Flutter project.
+# myExpense
 
-## Getting Started
+Application for Tracking Daily Money Usage in the hope of helping me save money, made with Flutter.[Link to the apk](https://google.com)
 
-This project is a starting point for a Flutter application.
+### Basic Overview
 
-A few resources to get you started if this is your first Flutter project:
+I made this to track my expenses as a college student, so this has all the basic functionalities of an expense tracker.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Development status
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+I've added everything I wanted to add for my personal needs. If requested, I can add more features, but unless I come up with more ideas on functionalities or find bugs while using it, the development will be on pause for now.
+
+Adding a monthly income, then as you spend keeping track of the expense, that gets subtracted from your total amount.
