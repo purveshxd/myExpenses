@@ -1,4 +1,4 @@
-![myExpenses](https://github.com/purveshxd/myExpenses/blob/main/assets/icons/money-mouth-face.png "myExpenses")
+![myExpenses](media\myExpense-banner.png "myExpenses")
 
 # myExpense
 
