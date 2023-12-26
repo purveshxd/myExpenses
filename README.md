@@ -8,10 +8,14 @@ Application for Tracking Daily Money Usage in the hope of helping me save money,
 
 I made this to track my expenses as a college student, so this has all the basic functionalities of an expense tracker.
 
-### Login/Auth
-Made the login and auth using Firebase
+## Pages/UI
 
+### Login/Auth
 ![myExpenses](https://github.com/purveshxd/myExpenses/blob/main/media/login-register.png "login/Register")
+
+### Homepage
+
+![myExpenses](https://github.com/purveshxd/myExpenses/blob/main/media/home-page.png "homepage")
 
 ### Development status
 
