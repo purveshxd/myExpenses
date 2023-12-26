@@ -18,6 +18,10 @@ I made this to track my expenses as a college student, so this has all the basic
 
 ![myExpenses](https://github.com/purveshxd/myExpenses/blob/main/media/home-page.png "homepage")
 
+### Add Transaction
+
+![myExpenses](https://github.com/purveshxd/myExpenses/blob/main/media/transactions.png "add transactions")
+
 ### Development status
 
 I've added everything I wanted to add for my personal needs. If requested, I can add more features, but unless I come up with more ideas on functionalities or find bugs while using it, the development will be on pause for now.
