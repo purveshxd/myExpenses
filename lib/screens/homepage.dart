@@ -3,7 +3,6 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:intl/intl.dart';
 import 'package:myexpenses/Hivedatabase/hive_database.dart';
 import 'package:myexpenses/components/app_bar.dart';
-import 'package:myexpenses/firebaseDatabase/firebaseDatabase.dart';
 import 'package:myexpenses/widgets/in_out_expense.dart';
 import 'package:myexpenses/widgets/input_text_field.dart';
 

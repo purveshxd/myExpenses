@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
-import 'package:myexpenses/firebaseDatabase/firebaseDatabase.dart';
 import 'package:myexpenses/widgets/custom_list_tile.dart';
 import 'package:myexpenses/widgets/expence_card.dart';
 
