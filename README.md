@@ -2,7 +2,8 @@
 
 # myExpense
 
-Application for Tracking Daily Money Usage in the hope of helping me save money, made with Flutter.[Link to the apk](https://google.com)
+Application for Tracking Daily Money Usage in the hope of helping me save money, made with Flutter.
+### [Link to the apk](https://google.com)
 
 ### Basic Overview
 
