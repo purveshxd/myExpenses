@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 
 class InputTextField extends StatelessWidget {
+  final String hintText;
+  final TextEditingController textController;
+  final TextInputType? textInputType;
+  bool obscureText = false;
   InputTextField({
     Key? key,
     required this.hintText,
@@ -8,10 +12,6 @@ class InputTextField extends StatelessWidget {
     this.textInputType,
     required this.obscureText,
   }) : super(key: key);
-  final String hintText;
-  final TextEditingController textController;
-  final TextInputType? textInputType;
-  bool obscureText = false;
   @override
   Widget build(BuildContext context) {
     return TextField(

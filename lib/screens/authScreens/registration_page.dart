@@ -2,7 +2,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:myexpenses/constants/constants.dart';
-import 'package:myexpenses/firebaseDatabase/firebaseDatabase.dart';
 import 'package:myexpenses/widgets/input_text_field.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
